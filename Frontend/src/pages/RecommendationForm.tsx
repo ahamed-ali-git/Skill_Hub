@@ -13,7 +13,7 @@ const roles = ["Frontend Developer", "Backend Developer", "Full Stack Developer"
 const salaryRanges = ["$50k-75k", "$75k-100k", "$100k-125k", "$125k-150k", "$150k+"];
 
 // Gemini API configuration
-const API_KEY = "AIzaSyCUDVNuId7-E6dtj1mYTrGzXhYbS_wgUSQ";
+const API_KEY = "Replace_Your_APIKey";
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 const RecommendationForm = () => {
