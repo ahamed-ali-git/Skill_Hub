@@ -11,7 +11,7 @@ import { Trophy, Target, BookOpen, Rocket, ChevronRight, Award, TrendingUp, Ligh
 // Timer functionality removed as it was unused
 
 // API configuration from RecommendationForm
-const API_KEY = "AIzaSyCUDVNuId7-E6dtj1mYTrGzXhYbS_wgUSQ";
+const API_KEY = "Replace_Your_APIKey";
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
 interface Question {
