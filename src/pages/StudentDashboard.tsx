@@ -10,7 +10,7 @@ import Logo from '@/components/Logo';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = 'https://skill-hub-pl96.onrender.com/api';
+const API_URL = 'http://localhost:5000/api';
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
@@ -378,7 +378,7 @@ const StudentDashboard = () => {
                 <CardContent className="space-y-4">
                   <div className="aspect-video bg-black rounded-lg flex items-center justify-center overflow-hidden">
                     <video 
-                      src={`https://skill-hub-pl96.onrender.com${selectedVideo.video_url}`} 
+                      src={`http://localhost:5000${selectedVideo.video_url}`} 
                       controls 
                       className="w-full h-full"
                       onTimeUpdate={(e) => {

@@ -90,7 +90,7 @@ const TeacherDashboard = () => {
   const fetchTeacherData = async () => {
     try {
       // Fetch videos
-      const videosResponse = await axios.get('https://skill-hub-pl96.onrender.com/api/videos');
+      const videosResponse = await axios.get('http://localhost:5000/api/videos');
       if (videosResponse.data.success) {
         // Filter videos for this teacher
         const teacherVideos = videosResponse.data.videos.filter(
@@ -100,19 +100,19 @@ const TeacherDashboard = () => {
       }
 
       // Fetch students progress
-      const progressResponse = await axios.get(`https://skill-hub-pl96.onrender.com/api/teacher/students-progress/${teacher.id}`);
+      const progressResponse = await axios.get(`http://localhost:5000/api/teacher/students-progress/${teacher.id}`);
       if (progressResponse.data.success) {
         setStudentsProgress(progressResponse.data.progress);
       }
 
       // Fetch detailed progress
-      const detailedProgressResponse = await axios.get(`https://skill-hub-pl96.onrender.com/api/teacher/detailed-progress/${teacher.id}`);
+      const detailedProgressResponse = await axios.get(`http://localhost:5000/api/teacher/detailed-progress/${teacher.id}`);
       if (detailedProgressResponse.data.success) {
         setDetailedProgress(detailedProgressResponse.data.students);
       }
 
       // Fetch learning data
-      const learningDataResponse = await axios.get(`https://skill-hub-pl96.onrender.com/api/teacher/student-learning-data/${teacher.id}`);
+      const learningDataResponse = await axios.get(`http://localhost:5000/api/teacher/student-learning-data/${teacher.id}`);
       if (learningDataResponse.data.success) {
         setLearningData(learningDataResponse.data.learningData);
       }
@@ -144,7 +144,7 @@ const TeacherDashboard = () => {
       formData.append('video', selectedFile);
       formData.append('teacher_id', teacher.id.toString());
 
-      const response = await axios.post('https://skill-hub-pl96.onrender.com/api/videos', formData, {
+      const response = await axios.post('http://localhost:5000/api/videos', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

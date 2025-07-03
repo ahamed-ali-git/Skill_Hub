@@ -28,7 +28,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://skill-hub-pl96.onrender.com/api/login', formData);
+      const res = await axios.post('http://localhost:5000/api/login', formData);
       if (res.data.success) {
         localStorage.setItem('user', JSON.stringify(res.data.user));
         navigate('/landing');
@@ -40,7 +40,7 @@ const Login = () => {
 
   const handleGoogleSuccess = async (credentialResponse: any) => {
     try {
-      const res = await axios.post('https://skill-hub-pl96.onrender.com/api/google-auth', {
+      const res = await axios.post('http://localhost:5000/api/google-auth', {
         credential: credentialResponse.credential
       });
       if (res.data.success) {

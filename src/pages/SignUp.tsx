@@ -46,7 +46,7 @@ const SignUp = () => {
       setIsSubmitting(true);
       
       // Using the endpoint from the first file (/api/register)
-      const res = await axios.post('https://skill-hub-pl96.onrender.com/api/register', {
+      const res = await axios.post('http://localhost:5000/api/register', {
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),
         password: formData.password,
@@ -85,7 +85,7 @@ const SignUp = () => {
   const handleGoogleSuccess = async (credentialResponse: any) => {
     try {
       setIsSubmitting(true);
-      const res = await axios.post('https://skill-hub-pl96.onrender.com/api/google-auth', {
+      const res = await axios.post('http://localhost:5000/api/google-auth', {
         credential: credentialResponse.credential
       });
       
